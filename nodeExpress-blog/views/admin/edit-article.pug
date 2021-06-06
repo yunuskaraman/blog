@@ -1,0 +1,31 @@
+extends ../layouts/main-layout.pug
+
+block content
+
+    form(action="/admin/articles" method="POST")
+
+        input(type="hidden" name="id" value=`${article.id}`)
+        div.form-group.row
+            label( for="name").col-sm-2.col-form-label Makale Adı
+            div.col-sm-10
+                input( type="text" name="name" value=`${article.name}`).form-control#name
+        // div.form-group.row.my-2
+            label( for="price").col-sm-2.col-form-label Price
+            div.col-sm-10
+                input( type="text" name="price" value=`${article.price}`).form-control#price
+        
+        div.form-group.row.my-2
+            label( for="image").col-sm-2.col-form-label Resim
+            div.col-sm-10
+                input( type="text" name="imageUrl" value=`${article.imageUrl}`).form-control#image
+        div.form-group.row.my-2
+            label( for="description").col-sm-2.col-form-label İçerik
+            div.col-sm-10
+                textarea.form-control(name="description" cols="120" rows="5") #{article.description}
+                
+        div.form-group.row     
+            div.col-sm-10.offset-sm-2.mt-2
+                input(type="submit" value="SaveArticle").btn.btn-primary
+
+
+

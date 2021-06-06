@@ -1,0 +1,17 @@
+mixin createArticle(article)
+    div.col-md-4
+        div.card.my-3
+            img(src=`/img/${article.imageUrl}` alt=`${article.description}`)
+            .card-img-top
+            div.card-body
+                h4.card-title
+                    a(href=`/articles/${article.id}`) #{article.name}
+                
+              
+                
+
+            div.card-footer.text-center
+          
+                a(href=`/articles/${article.id}`).btn.btn-outline-primary.btn-sm Details
+                
+                

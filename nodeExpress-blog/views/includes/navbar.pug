@@ -1,0 +1,27 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+    
+    div.container
+        ul.navbar-nav
+            a(href="/").navbar-brand BLOG
+            
+            li.nav-item
+                a(href="/",class=(path=='/'?'nav-link active':'nav-link')) Anasayfa
+            
+            li.nav-item
+                a(href="/articles",class=(path=='/articles'?'nav-link active':'nav-link')) Makaleler
+
+           
+            li.nav-item
+                a(href="/admin/add-article",class=(path=='/admin/add-article'?'nav-link active':'nav-link')) Makale Ekle
+
+            li.nav-item
+                a(href="/admin/articles",class=(path=='/admin/articles'?'nav-link active':'nav-link')) admin Makale
+         
+        ul.navbar-nav.ml-auto
+            li.nav-item
+                a.nav-link(href="") Giriş
+            
+            li.nav-item
+                a.nav-link(href="") Kayıt ol
+
+            

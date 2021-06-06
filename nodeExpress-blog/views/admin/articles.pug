@@ -1,0 +1,45 @@
+extends ../layouts/main-layout.pug
+
+block content
+
+    //if(action != "undefined" && action =="edit")
+        div().alert.alert-success The article  has been update
+    if(action != "undefined" && action =="delete")
+        div.alert.alert-danger The article  has been Delete #{id}
+    if articles.length > 0
+        table.table.table-bordered 
+            thead 
+                th Resim
+                th Makale Adı
+                th Seçim
+                
+            tbody
+                each article in articles
+                    if(article.id==id)
+                        tr.alert-success 
+                            td 
+                                img(src=`/img/${article.imageUrl}` width='80', alt="")
+                            td #{article.name}
+                            //td #{article.price} TL
+                            td 
+                                
+                                a.btn.btn-primary.btn-sm(href=`/admin/articles/${article.id}`) Edit 
+
+                                form(action="/admin/delete-article" method='POST')
+                                    input(type="hidden" name="articleid" value=`${article.id}`)
+                                    button(type="sumbit").btn.btn-danger.btn-sm Delete 
+                    else 
+                        tr
+                            td 
+                                img(src=`/img/${article.imageUrl}` width='80', alt="")
+                            td #{article.name}
+                            //td #{article.price} TL
+                            td 
+                                a.btn.btn-primary.btn-sm(href=`/admin/articles/${article.id}`) Edit
+
+                                form(action="/admin/delete-article" method='POST')
+                                    input(type="hidden" name="articleid" value=`${article.id}`)
+                                    button(type="sumbit").btn.btn-danger.btn-sm Delete
+    else                        
+
+        h1 Ürün Bulunamadı

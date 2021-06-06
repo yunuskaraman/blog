@@ -1,0 +1,12 @@
+extends ../layouts/main-layout.pug
+
+include ../mixins/createArticle.pug
+
+block content
+    
+    div.row
+        if articles.length > 0
+            each article in articles
+                +createArticle(article)
+        else
+            h1 Ürün Bulunamadı

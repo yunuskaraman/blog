@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+html(lang="en")
+    include ../includes/head.pug
+
+body
+    
+    include ../includes/navbar.pug
+
+    div.container.pt-100
+        div.row
+            div.col-lg-3
+                include ../includes/menu.pug
+            div.col-lg-9
+
+                block content
+
+script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js")
+script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js")
+script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js")
+
+script(defer src="/your-path-to-fontawesome/js/brands.js")
+script(defer src="/your-path-to-fontawesome/js/solid.js")
+script(defer src="/your-path-to-fontawesome/js/fontawesome.js")
+
+script(defer src="/your-path-to-fontawesome/js/all.js")
+
